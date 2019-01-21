@@ -9,5 +9,4 @@ LABEL "repository"="https://github.com/re-actors/manylinux1_x86_64-action"
 LABEL "homepage"="https://github.com/re-actors"
 LABEL "maintainer"="Sviatoslav Sydorenko <wk+re-actors@sydorenko.org.ua>"
 
-ENTRYPOINT ["bash"]
-CMD "\"$GITHUB_WORKSPACE/${BUILD_SCRIPT_PATH:-tools/build-wheels.sh}\" \"${PYPI_PKG_DIST_NAME:-aiohttp}\""
+CMD ["sh", "-c", "\"$GITHUB_WORKSPACE/${BUILD_SCRIPT_PATH:-tools/build-wheels.sh}\" \"${PYPI_PKG_DIST_NAME:-aiohttp}\""]
